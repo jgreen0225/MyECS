@@ -8,7 +8,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\StatsRequest;
 use App\Stats;
 
@@ -55,10 +54,10 @@ class StatsController extends Controller
 
     public function update($ID, StatsRequest $request)
     {
-        $stats = Stats::FindOrFail($ID);
+        $stats = \DB::Stats()
         $stats->timestamps  = false;
-        $stats->update($request->all());
-        return redirect('stats/'.$ID.'/edit');
+
+
     }
 
     public function destroy()

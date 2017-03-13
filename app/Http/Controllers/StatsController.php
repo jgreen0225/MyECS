@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StatsRequest;
 use App\Stats;
+use Illuminate\Support\Facades\DB;
 
 class StatsController extends Controller
 
@@ -54,10 +55,10 @@ class StatsController extends Controller
 
     public function update($ID, StatsRequest $request)
     {
-        $stats = \DB::Stats()
-        $stats->timestamps  = false;
-
-
+        $geo = $request -> Geo;
+        DB::table('Stats')
+                            ->where('id', $ID)
+                            ->update(['Geo' => $geo]);
     }
 
     public function destroy()

@@ -10,20 +10,34 @@
     <title>{{$title}}</title>
 </head>
 <body>
-<!-- Chapter 8 -->
+<script type='text/javascript'>//<![CDATA[
+    $(window).load(function(){
+        $(function(){
+            // Check the initial Poistion of the Sticky Header
+            var stickyHeaderTop = $('#stickyheader').offset().top;
 
+            $(window).scroll(function(){
+                if( $(window).scrollTop() > stickyHeaderTop ) {
+                    $('#stickyheader').css({position: 'fixed', top: '0px'});
+                    $('#stickyalias').css('display', 'block');
+                } else {
+                    $('#stickyheader').css({position: 'static', top: '0px'});
+                    $('#stickyalias').css('display', 'none');
+                }
+            });
+        });
+    });//]]>
+
+</script>
 <div class="container-fluid" style="padding-right: 0; padding-left: 0;">
-    <div class="container-nav" style=" margin: 17px;">
-    </div>
+
         <div class="container-fluid">
         <ul class="nav nav-tabs">
             <li>
-                <a href="/"><span class="glyphicon glyphicon-home" style="padding:2px;fontsize:larger">
-		</span>Home
-                </a>
+
             </li>
         </ul>
-        <nav class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-default" role="navigation"   id="stickyheader" >
             <script type="text/javascript">
                 function open_win() {
                     window.open("http://www.ecampaignstats.com/cp/index.php/lprd2/reports/single_offers");
@@ -61,7 +75,7 @@
                     <div class="panel-title pull-left"><p>{{$title}}</p></div><div class="pull-right" style="margin-top: -9px;"><a href="{{$url}}" style="float: right;"><button  class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-refresh" style="padding:2px;font-size:larger"></span>Reset</button></a></div>
                 </div>
                 <div class="panel-body" style="padding-right: 0px; padding-left: 0px;">
-                    <div class="container">
+                    <div class="panel">
                         @yield('content')
                     </div>
 

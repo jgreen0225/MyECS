@@ -24,7 +24,7 @@ class StatsRequest extends Request
     public function rules()
     {
         return [
-            'ID' => 'required',
+            'id' => 'required',
             'Geo' => 'required',
         ];
     }

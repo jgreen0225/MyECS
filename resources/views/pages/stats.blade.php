@@ -14,18 +14,32 @@
             <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">Type</th>
             <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">Campaign Name</th>
             <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">Client</th>
-            <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">Start Date</th>
+            <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">Quantity</th>
+            <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">Opens</th>
+            <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">Opens %</th>
+            <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">ITOR</th>
+            <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">Clicks</th>
+            <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">Clicks Ordered</th>
+            <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">Clicks %</th>
+            <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">% Complete</th>
             <th class="bg-primary tablesorter-header tablesorter-headerUnSorted">Geo</th>
         </tr>
         </thead>
         @foreach($stats as $stat)
         <tr>
-            <td class="text-center"><a href="/stats/{{$stat->ID}}/edit">{{$stat->OrderID}}</a></td>
+            <td class="text-center"><a href="/stats/{{$stat->id}}/edit">{{$stat->OrderID}}</a></td>
             <td class="text-center">{{$stat->SystemID}}</td>
             <td class="text-center">{{$stat->Type}}</td>
             <td class="text-center">{{$stat->CampaignName}}</td>
             <td class="text-center">{{$stat->Client}}</td>
-            <td class="text-center">{{$stat->Start}}</td>
+            <td class="text-center">{{$stat->Quantity}}</td>
+            <td class="text-center">{{$stat->Opens}}</td>
+            <td class="text-center">{{$stat->oP}}</td>
+            <td class="text-center">{{$stat->oN}}</td>
+            <td class="text-center">{{$stat->Clicks}}</td>
+            <td class="text-center">{{$stat->cO}}</td>
+            <td class="text-center">{{$stat->cP}}</td>
+            <td class="text-center">{{$stat->Complete}}</td>
             <td class="text-center">{{$stat->Geo}}</td>
         </tr>
     @endforeach

@@ -59,6 +59,9 @@ class StatsController extends Controller
         DB::table('Stats')
                             ->where('id', $ID)
                             ->update(['Geo' => $geo]);
+
+        $next = $ID+1;
+        return redirect('stats/'.$next.'/edit');
     }
 
     public function destroy()

@@ -15,8 +15,16 @@ class Stats extends Model
         'CampaignName',
         'Client',
         'Start',
+        'Quantity',
+        'Opens',
+        'Clicks',
+        'oP',
+        'cP',
+        'oN',
+        'cO',
+        'Complete',
         'Geo',
-        'ID'
+        'id'
     ];
 
 
